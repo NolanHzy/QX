@@ -16,7 +16,9 @@ if(isGetCookie){
 }
 function CheckApi(){
    if($request.url.indexOf("t.captcha.qq.com/cap_union_new_verify")>-1){
-         console.log('\n body '+$request.body)
+       var body=$request.body
+       
+         console.log('\n body '+ JSON.stringify(body))
          $.done()
    }
 }
