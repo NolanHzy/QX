@@ -16,8 +16,8 @@ function CheckApi(){
    if($request.url.indexOf("t.captcha.qq.com/cap_union_new_verify")>-1){
     var rqbody = $request.body;
     var resul= $response.body;
-    console.log(rqbody);
-    console.log(resul);
+    console.log(rqbody.aid);
+    //console.log(resul);
     $.done(resul);
     }
 }
