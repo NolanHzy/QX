@@ -11,17 +11,23 @@ Nolan
 
 const $ = new Env('yijianlianvpn')
 let isGetCookie = typeof $request !== 'undefined'
-if(isGetCookie){
-    CheckApi();
-}
+
 function CheckApi(){
    if($request.url.indexOf("t.captcha.qq.com/cap_union_new_verify")>-1){
-       var body=$request.body
-       
-         console.log('\n body '+ JSON.stringify(body))
-         $.done()
-   }
+    var rqbody = $request.body;
+    var resul= $response.body;
+    console.log(rqbody);
+    console.log(resul);
+    $.done(resul);
+    }
 }
+!(async () => {
+    if(isGetCookie){
+        CheckApi();
+    }
+  })()
+    .catch((e) => $.logErr(e))
+    .finally(() => $.done())
 
 
 // prettier-ignore, @chavyleung
