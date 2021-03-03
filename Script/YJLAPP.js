@@ -9,7 +9,7 @@ Nolan
 
 */
 
-const $ = new Env('yijianlianvpn')
+const $ = new Env('一键联APP')
 let isGetCookie = typeof $request !== 'undefined'
 
 function CheckApi(){
@@ -17,6 +17,8 @@ function CheckApi(){
     var rqbody = $request.body;
     var resul= $response.body;
     console.log(rqbody.aid);
+    $.log(rqbody)
+   $.msg($.name,"",rqbody.aid)
     //console.log(resul);
     $.done(resul);
     }
